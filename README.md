@@ -4,16 +4,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sistema de Hacker Oficial - BerMatModZ</title>
   <style>
-    /* Estilo general */
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=VT323&family=Russo+One&display=swap');
     body {
       background: #000000;
       color: #00ff00;
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'VT323', monospace;
       margin: 0;
       padding: 0;
       overflow-x: hidden;
-    }/* Contenedor principal */
-.container {
+    }.container {
   max-width: 1200px;
   margin: auto;
   padding: 20px;
@@ -22,7 +21,6 @@
   box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
 }
 
-/* Encabezado principal */
 .header {
   background-color: #0f0f0f;
   padding: 30px;
@@ -36,9 +34,9 @@
   color: #00ff00;
   margin: 0;
   text-transform: uppercase;
+  font-family: 'Russo One', sans-serif;
 }
 
-/* Cuadros de información */
 .info-box {
   background-color: #111;
   border: 2px solid #00ff00;
@@ -46,6 +44,7 @@
   margin-bottom: 30px;
   border-radius: 15px;
   box-shadow: 0 0 25px rgba(0, 255, 0, 0.8);
+  font-family: 'Orbitron', sans-serif;
 }
 
 .info-box h2 {
@@ -72,7 +71,6 @@
   color: #32cd32;
 }
 
-/* Formulario de hackeo */
 .form-container {
   background-color: #111;
   border: 2px solid #00ff00;
@@ -81,9 +79,10 @@
   box-shadow: 0 0 25px rgba(0, 255, 0, 0.9);
   margin-bottom: 30px;
   text-align: center;
+  font-family: 'VT323', monospace;
 }
 
-.form-container input[type="text"] {
+.form-container input[type="text"], .form-container input[type="password"] {
   padding: 15px;
   width: 90%;
   font-size: 22px;
@@ -109,39 +108,47 @@
   background-color: #32cd32;
 }
 
-/* Mensaje de advertencia */
-.warning-message {
+.vip-access {
   background-color: #101010;
   border: 2px solid #00ff00;
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 0 25px rgba(0, 255, 0, 0.9);
-  margin-top: 20px;
+  margin-bottom: 30px;
   text-align: center;
-  font-size: 22px;
-  color: #ff0000;
   font-family: 'Orbitron', sans-serif;
 }
 
-.warning-message a {
+.vip-access h3 {
+  font-size: 32px;
+  color: #00ff00;
+  margin-bottom: 20px;
+  font-family: 'Russo One', sans-serif;
+}
+
+.vip-access p {
+  font-size: 22px;
+  color: #ff0000;
+  margin-bottom: 20px;
+}
+
+.vip-access a {
   color: #00ffff;
   font-weight: bold;
   text-decoration: none;
   font-size: 24px;
 }
 
-.warning-message a:hover {
+.vip-access a:hover {
   color: #32cd32;
 }
 
   </style>
 </head>
-<body>  <!-- Contenedor principal -->  <div class="container"><!-- Encabezado principal -->
-<div class="header">
+<body>  <div class="container"><div class="header">
   <h1>Sistema de Hacker Oficial por AnthZz Berrocal</h1>
 </div>
 
-<!-- Información personal -->
 <div class="info-box">
   <h2>Información de BerMatModZ</h2>
   <p><strong>Creador:</strong> AnthZz Berrocal</p>
@@ -151,7 +158,16 @@
   <p><a href="https://github.com/anthzzberrocal" target="_blank">GitHub</a></p>
 </div>
 
-<!-- Formulario de hackeo -->
+<div class="vip-access">
+  <h3>Acceso al Servicio VIP</h3>
+  <p>Para ingresar a este sistema VIP, introduce el código de acceso que te brindó mi creador AnthZz Berrocal.</p>
+  <form onsubmit="mostrarAdvertencia(event)">
+    <input type="password" placeholder="Ingresa tu código de acceso" required><br><br>
+    <input type="submit" value="Acceder">
+  </form>
+  <p>¿No tienes el código? <a href="https://wa.me/937556459?text=Quiero%20comprar%20tu%20servicio%20de%20hackers" target="_blank">Haz clic aquí para comprar</a></p>
+</div>
+
 <div class="form-container">
   <h3>Ingrese el número de teléfono para hackear:</h3>
   <form onsubmit="mostrarAdvertencia(event)">
@@ -160,17 +176,10 @@
   </form>
 </div>
 
-<!-- Mensaje de advertencia -->
 <div id="advertencia" class="warning-message" style="display: none;">
   <p>Aún no has ingresado el código de acceso para obtener toda la información del dicho número. Debes ingresar el código de acceso que compraste para continuar.</p>
   <a href="https://wa.me/937556459?text=Quiero%20comprar%20tu%20servicio%20de%20hackers" target="_blank">Haz clic aquí para comprar</a>
 </div>
 
-  </div>  <script>
-    function mostrarAdvertencia(event) {
-      event.preventDefault();
-      const advertencia = document.getElementById('advertencia');
-      advertencia.style.display = 'block';
-    }
-  </script></body>
+  </div></body>
 </html>
