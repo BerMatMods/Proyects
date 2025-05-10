@@ -1,185 +1,167 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistema de Hacker Oficial - BerMatModZ</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=VT323&family=Russo+One&display=swap');
-    body {
-      background: #000000;
-      color: #00ff00;
-      font-family: 'VT323', monospace;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-  background-color: #0d0d0d;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
-}
-
-.header {
-  background-color: #0f0f0f;
-  padding: 30px;
-  border-radius: 15px;
-  margin-bottom: 30px;
-  box-shadow: 0 0 25px rgba(0, 255, 0, 0.9);
-}
-
-.header h1 {
-  font-size: 48px;
-  color: #00ff00;
-  margin: 0;
-  text-transform: uppercase;
-  font-family: 'Russo One', sans-serif;
-}
-
-.info-box {
-  background-color: #111;
-  border: 2px solid #00ff00;
-  padding: 30px;
-  margin-bottom: 30px;
-  border-radius: 15px;
-  box-shadow: 0 0 25px rgba(0, 255, 0, 0.8);
-  font-family: 'Orbitron', sans-serif;
-}
-
-.info-box h2 {
-  font-size: 36px;
-  color: #00ff00;
-  text-transform: uppercase;
-}
-
-.info-box p {
-  font-size: 20px;
-  color: #ffffff;
-  margin: 15px 0;
-}
-
-.info-box a {
-  color: #00ffff;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 22px;
-  transition: color 0.3s ease;
-}
-
-.info-box a:hover {
-  color: #32cd32;
-}
-
-.form-container {
-  background-color: #111;
-  border: 2px solid #00ff00;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 0 25px rgba(0, 255, 0, 0.9);
-  margin-bottom: 30px;
-  text-align: center;
-  font-family: 'VT323', monospace;
-}
-
-.form-container input[type="text"], .form-container input[type="password"] {
-  padding: 15px;
-  width: 90%;
-  font-size: 22px;
-  border: 2px solid #00ff00;
-  background-color: #000;
-  color: #00ff00;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-.form-container input[type="submit"] {
-  background-color: #00ff00;
-  color: #000000;
-  border: none;
-  padding: 15px 30px;
-  font-size: 24px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.form-container input[type="submit"]:hover {
-  background-color: #32cd32;
-}
-
-.vip-access {
-  background-color: #101010;
-  border: 2px solid #00ff00;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 0 25px rgba(0, 255, 0, 0.9);
-  margin-bottom: 30px;
-  text-align: center;
-  font-family: 'Orbitron', sans-serif;
-}
-
-.vip-access h3 {
-  font-size: 32px;
-  color: #00ff00;
-  margin-bottom: 20px;
-  font-family: 'Russo One', sans-serif;
-}
-
-.vip-access p {
-  font-size: 22px;
-  color: #ff0000;
-  margin-bottom: 20px;
-}
-
-.vip-access a {
-  color: #00ffff;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 24px;
-}
-
-.vip-access a:hover {
-  color: #32cd32;
-}
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Hackeo Oficial</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            font-family: 'Courier New', Courier, monospace;
+            color: #00ff00;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        h1 {
+            text-align: center;
+            font-size: 4em;
+            animation: glowing 2s ease-in-out infinite alternate;
+        }
+        .banner {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3em;
+            color: #00ff00;
+            animation: bannerGlow 5s infinite alternate;
+        }
+        .floating {
+            position: absolute;
+            animation: float 5s ease-in-out infinite;
+        }
+        .floating:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .floating:nth-child(2) { top: 30%; right: 5%; animation-delay: 1s; }
+        .floating:nth-child(3) { bottom: 10%; left: 25%; animation-delay: 2s; }
+        .floating:nth-child(4) { top: 50%; right: 15%; animation-delay: 3s; }
+        .box {
+            background-color: rgba(0, 255, 0, 0.1);
+            padding: 20px;
+            margin: 15px;
+            border: 1px solid #00ff00;
+            box-shadow: 0 0 15px #00ff00;
+            text-align: center;
+            font-size: 1.2em;
+            animation: glowing 1.5s ease-in-out infinite alternate;
+        }
+        .input-box {
+            background-color: rgba(0, 255, 0, 0.2);
+            border: none;
+            padding: 10px;
+            font-size: 1.5em;
+            color: #00ff00;
+            width: 60%;
+            text-align: center;
+            margin: 10px 0;
+            border-radius: 10px;
+            animation: glowing 1.5s ease-in-out infinite alternate;
+        }
+        .submit-button {
+            background-color: #00ff00;
+            color: #1e1e1e;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 1.5em;
+            cursor: pointer;
+            animation: glowing 1.5s ease-in-out infinite alternate;
+        }
+        .submit-button:hover {
+            background-color: #1e1e1e;
+            color: #00ff00;
+        }
+        @keyframes glowing {
+            0% { text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00; }
+            100% { text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00; }
+        }
+        @keyframes bannerGlow {
+            0% { color: #00ff00; }
+            100% { color: #ff00ff; }
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+            100% { transform: translateY(0); }
+        }
+        .hover-effect:hover {
+            background-color: #ff00ff;
+            color: #1e1e1e;
+        }
+        .whatsapp-link {
+            font-weight: bold;
+            color: #ff00ff;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px;
+            background-color: #00ff00;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        .whatsapp-link:hover {
+            background-color: #ff00ff;
+            color: #1e1e1e;
+        }
+    </style>
 </head>
-<body>  <div class="container"><div class="header">
-  <h1>Sistema de Hacker Oficial por AnthZz Berrocal</h1>
-</div>
+<body>
+    <div class="banner">
+        <span>Sistema de Hackeo Oficial por AnthZz Berrocal</span>
+    </div>
 
-<div class="info-box">
-  <h2>Información de BerMatModZ</h2>
-  <p><strong>Creador:</strong> AnthZz Berrocal</p>
-  <p><strong>Redes Sociales:</strong></p>
-  <p><a href="https://wa.me/937556459" target="_blank">WhatsApp</a></p>
-  <p><a href="https://www.instagram.com/anthzzberrocal" target="_blank">Instagram</a></p>
-  <p><a href="https://github.com/anthzzberrocal" target="_blank">GitHub</a></p>
-</div>
+    <div class="floating">🔒</div>
+    <div class="floating">💻</div>
+    <div class="floating">👾</div>
+    <div class="floating">💥</div>
 
-<div class="vip-access">
-  <h3>Acceso al Servicio VIP</h3>
-  <p>Para ingresar a este sistema VIP, introduce el código de acceso que te brindó mi creador AnthZz Berrocal.</p>
-  <form onsubmit="mostrarAdvertencia(event)">
-    <input type="password" placeholder="Ingresa tu código de acceso" required><br><br>
-    <input type="submit" value="Acceder">
-  </form>
-  <p>¿No tienes el código? <a href="https://wa.me/937556459?text=Quiero%20comprar%20tu%20servicio%20de%20hackers" target="_blank">Haz clic aquí para comprar</a></p>
-</div>
+    <h1>Hackeando...</h1>
 
-<div class="form-container">
-  <h3>Ingrese el número de teléfono para hackear:</h3>
-  <form onsubmit="mostrarAdvertencia(event)">
-    <input type="text" id="phone" placeholder="Número de teléfono" required><br><br>
-    <input type="submit" value="Hackear">
-  </form>
-</div>
+    <div class="box">
+        <p><strong>Ingreso de Código de Acceso</strong></p>
+        <input type="text" id="access-code" class="input-box" placeholder="Ingresa el código aquí..." />
+        <button class="submit-button" onclick="verifyCode()">Verificar Código</button>
+    </div>
 
-<div id="advertencia" class="warning-message" style="display: none;">
-  <p>Aún no has ingresado el código de acceso para obtener toda la información del dicho número. Debes ingresar el código de acceso que compraste para continuar.</p>
-  <a href="https://wa.me/937556459?text=Quiero%20comprar%20tu%20servicio%20de%20hackers" target="_blank">Haz clic aquí para comprar</a>
-</div>
+    <div class="box">
+        <p><strong>Ingresa el número para hackear</strong></p>
+        <input type="text" id="phone-number" class="input-box" placeholder="Ej. 900233784" />
+        <button class="submit-button hover-effect" onclick="startHack()">Iniciar Hackeo</button>
+    </div>
 
-  </div></body>
+    <div class="box">
+        <p><strong>¿No tienes el código de acceso?</strong></p>
+        <p>Si no tienes el código de acceso, puedes obtenerlo contactando a mi dueño.</p>
+        <a href="https://wa.me/937556459?text=🔥%20Hola%20AnthZz%20Berrocal,%20quiero%20comprar%20tu%20servicio%20de%20hacker%20VIP%20💀%20-%20⚡%20Dame%20acceso%20al%20mundo%20de%20BerMatModZ%20⚡" class="whatsapp-link" target="_blank">Haz clic aquí para obtener el servicio</a>
+    </div>
+
+    <script>
+        let accessCodeVerified = false;
+
+        function verifyCode() {
+            const enteredCode = document.getElementById("access-code").value;
+            const correctCode = "BerMat123";
+            if (enteredCode === correctCode) {
+                accessCodeVerified = true;
+                alert("Código verificado con éxito.");
+                document.getElementById("phone-number").style.display = "block";
+                document.querySelector(".submit-button").textContent = "Iniciar Hackeo";
+            } else {
+                alert("Código incorrecto. Intenta nuevamente.");
+            }
+        }
+
+        function startHack() {
+            if (accessCodeVerified) {
+                const phoneNumber = document.getElementById("phone-number").value;
+                if (phoneNumber) {
+                    alert(`Hackeando el número ${phoneNumber}...`);
+                    // Aquí podrías agregar animaciones o más detalles del hackeo simulado
+                } else {
+                    alert("Por favor, ingresa un número de teléfono.");
+                }
+            } else {
+                alert("Necesitas ingresar el código de acceso primero.");
+            }
+        }
+    </script>
+</body>
 </html>
