@@ -113,7 +113,7 @@
 
 <div class="container" id="access-container" style="display:none;">
     <h2>⚠️ Acceso al Sistema VIP de BerMatModZ ⚠️</h2>
-    <p>Creado por Anth'Zz Berrocal</p>
+    <p>Accede con el código que te brindó mi dueño Anth'Zz Berrocal para ingresar al sistema. Si no tienes el código de acceso, puedes solicitarlo <a href="https://wa.me/937556459?text=Hola%20Anth%27Zz%20Berrocal%2C%20quiero%20comprar%20tu%20servicio%20de%20hackers%20profesional." target="_blank" style="color: #00FF00; text-decoration: none;">aquí</a>.</p>
     <input type="password" placeholder="Ingrese código de acceso" class="code-input" id="access-code">
     <button class="hack-button" onclick="verifyCode()">Ingresar</button>
     <p id="error-message" style="color:#FF0000;"></p>
@@ -144,11 +144,7 @@
                 "Escaneando mensajes...",
                 "IP del objetivo: 192.168.1.45",
                 "Ubicación aproximada: Andahuaylas, Perú",
-                "Nombre del dispositivo: AnthZz-iPhone",
-                "Chats recientes:",
-                "Bro, cuándo sale tu nuevo bot de IA? 🤖🔥",
-                "Hermano, tu BerMat-Bot MD está rompiendo el código en Termux! 💥😎",
-                "Anth'Zz, me ayudas con un script para hackear redes WiFi? 😏🔓"
+                "Nombre del dispositivo: AnthZz-iPhone"
             ];
             document.getElementById('chat-output').innerHTML = messages.join('<br>');
         } else {
