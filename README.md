@@ -8,7 +8,7 @@
     body {
       background: #000000;
       color: #00ff00;
-      font-family: 'Courier New', Courier, monospace;
+      font-family: 'Orbitron', sans-serif;
       margin: 0;
       padding: 0;
       overflow-x: hidden;
@@ -33,7 +33,6 @@
 
 .header h1 {
   font-size: 48px;
-  font-family: 'Orbitron', sans-serif;
   color: #00ff00;
   margin: 0;
   text-transform: uppercase;
@@ -81,6 +80,7 @@
   border-radius: 15px;
   box-shadow: 0 0 25px rgba(0, 255, 0, 0.9);
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .form-container input[type="text"] {
@@ -109,8 +109,8 @@
   background-color: #32cd32;
 }
 
-/* Mensaje de código de acceso */
-.access-message {
+/* Mensaje de advertencia */
+.warning-message {
   background-color: #101010;
   border: 2px solid #00ff00;
   padding: 30px;
@@ -118,29 +118,20 @@
   box-shadow: 0 0 25px rgba(0, 255, 0, 0.9);
   margin-top: 20px;
   text-align: center;
-}
-
-.access-message p {
-  font-size: 24px;
-  color: #00ff00;
-  margin: 20px 0;
+  font-size: 22px;
+  color: #ff0000;
   font-family: 'Orbitron', sans-serif;
 }
 
-.access-message a {
-  background-color: #32cd32;
-  color: #ffffff;
-  padding: 15px 30px;
-  border-radius: 15px;
-  font-size: 22px;
+.warning-message a {
+  color: #00ffff;
+  font-weight: bold;
   text-decoration: none;
-  display: inline-block;
-  margin-top: 20px;
-  transition: background-color 0.3s ease;
+  font-size: 24px;
 }
 
-.access-message a:hover {
-  background-color: #00ff00;
+.warning-message a:hover {
+  color: #32cd32;
 }
 
   </style>
@@ -163,18 +154,23 @@
 <!-- Formulario de hackeo -->
 <div class="form-container">
   <h3>Ingrese el número de teléfono para hackear:</h3>
-  <form action="">
-    <input type="text" name="phone" placeholder="Número de teléfono" required><br><br>
+  <form onsubmit="mostrarAdvertencia(event)">
+    <input type="text" id="phone" placeholder="Número de teléfono" required><br><br>
     <input type="submit" value="Hackear">
   </form>
 </div>
 
-<!-- Mensaje de código de acceso -->
-<div class="access-message">
-  <p>Para continuar, debes ingresar el código de acceso que te brindó mi creador, AnthZz Berrocal.</p>
-  <p>Si no tienes el código, puedes comprarlo haciendo clic en el enlace de abajo.</p>
+<!-- Mensaje de advertencia -->
+<div id="advertencia" class="warning-message" style="display: none;">
+  <p>Aún no has ingresado el código de acceso para obtener toda la información del dicho número. Debes ingresar el código de acceso que compraste para continuar.</p>
   <a href="https://wa.me/937556459?text=Quiero%20comprar%20tu%20servicio%20de%20hackers" target="_blank">Haz clic aquí para comprar</a>
 </div>
 
-  </div></body>
+  </div>  <script>
+    function mostrarAdvertencia(event) {
+      event.preventDefault();
+      const advertencia = document.getElementById('advertencia');
+      advertencia.style.display = 'block';
+    }
+  </script></body>
 </html>
