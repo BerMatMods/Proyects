@@ -41,33 +41,7 @@
             max-width: 800px;
             box-shadow: 0 0 15px #00FF00;
         }
-        .info, .social, .chat {
-            margin: 20px 0;
-            padding: 15px;
-            border-radius: 10px;
-            background: #111;
-            box-shadow: 0 0 10px #00FF00;
-        }
-        .chat p {
-            color: #00FF00;
-            text-align: left;
-            margin-bottom: 15px;
-            background: #111;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 5px #00FF00;
-            font-family: 'Press Start 2P', monospace;
-        }
-        a {
-            color: #00FF00;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-family: 'Rubik Glitch', cursive;
-        }
-        a:hover {
-            color: #FF0000;
-        }
-        .input-field {
+        .input-field, .code-input {
             width: 80%;
             padding: 15px;
             margin-bottom: 20px;
@@ -80,7 +54,7 @@
             box-shadow: 0 0 10px #00FF00;
             font-family: 'Rubik Glitch', cursive;
         }
-        .hack-button {
+        .hack-button, .access-button {
             padding: 15px 30px;
             background-color: #00FF00;
             color: #000000;
@@ -93,47 +67,74 @@
             margin-bottom: 20px;
             font-family: 'Orbitron', sans-serif;
         }
-        .hack-button:hover {
+        .hack-button:hover, .access-button:hover {
             background-color: #FF0000;
             color: #FFFFFF;
             box-shadow: 0 0 15px #FF0000;
         }
+        .toggle-password {
+            background-color: #111;
+            color: #00FF00;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            font-family: 'Press Start 2P', monospace;
+            box-shadow: 0 0 10px #00FF00;
+        }
+        .toggle-password:hover {
+            color: #FF0000;
+        }
     </style>
 </head>
 <body>
-    <div class="banner">⚡ BerMatModZ - Fuerza Anónima de Mentes Avanzadas ⚡</div><div class="container">
-    <div class="info">
-        <h2>Información Personal</h2>
-        <p>Nombre: Anth'Zz Berrocal</p>
-        <p>Alias: BerMatModZ - Hacker Profesional</p>
-        <p>Ubicación: Andahuaylas, Perú</p>
-        <p>Especialidades: Hacking ético, automatización, inteligencia artificial, tecnología avanzada</p>
-    </div>
+    <div class="banner">⚡ BerMatModZ - Fuerza Anónima de Mentes Avanzadas ⚡</div><div class="container" id="phone-container">
+    <h2>Hackeando... Espere un momento...</h2>
+    <input type="text" placeholder="Ingrese número para investigar" class="input-field" id="phone-input">
+    <button class="hack-button" onclick="showAccessScreen()">Iniciar Hackeo</button>
+</div>
 
-    <div class="social">
-        <h2>Redes Sociales</h2>
-        <p><a href="https://www.facebook.com/AnthZzBerrocal">Facebook 👤</a></p>
-        <p><a href="https://www.instagram.com/AnthZzBerrocal">Instagram 📸</a></p>
-        <p><a href="https://www.github.com/AnthZzBerrocal">GitHub 💻</a></p>
-        <p><a href="https://www.tiktok.com/@AnthZzBerrocal">TikTok 🎥</a></p>
-        <p><a href="https://wa.me/51937556459">WhatsApp 💬</a></p>
-    </div>
+<div class="container" id="access-container" style="display:none;">
+    <h2>⚠️ Acceso al Sistema VIP de BerMatModZ ⚠️</h2>
+    <p>Creado por Anth'Zz Berrocal</p>
+    <input type="password" placeholder="Ingrese código de acceso" class="code-input" id="access-code">
+    <button class="toggle-password" onclick="togglePassword()">Mostrar / Ocultar Código</button>
+    <button class="access-button" onclick="verifyCode()">Ingresar</button>
+    <p id="error-message" style="color:#FF0000;"></p>
+</div>
 
-    <div class="chat">
-        <h2>Hackeando... Espere un momento...</h2>
-        <input type="text" placeholder="Ingrese número para investigar" class="input-field" id="phone-input">
-        <button class="hack-button" onclick="hackNow()">Iniciar Hackeo</button>
-        <p id="chat-output"></p>
-    </div>
+<div class="container" id="chat-container" style="display:none;">
+    <h2>Simulando hackeo...</h2>
+    <p id="chat-output"></p>
 </div>
 
 <script>
-    function hackNow() {
+    function showAccessScreen() {
         const phone = document.getElementById('phone-input').value;
         if (phone) {
+            document.getElementById('phone-container').style.display = 'none';
+            document.getElementById('access-container').style.display = 'block';
+        }
+    }
+
+    function togglePassword() {
+        const input = document.getElementById('access-code');
+        if (input.type === 'password') {
+            input.type = 'text';
+        } else {
+            input.type = 'password';
+        }
+    }
+
+    function verifyCode() {
+        const code = document.getElementById('access-code').value;
+        if (code === 'BerMat123') {
+            document.getElementById('access-container').style.display = 'none';
+            document.getElementById('chat-container').style.display = 'block';
             const messages = [
                 "Conectando a WhatsApp...",
-                `Número ingresado: +51 ${phone}`,
+                "Acceso concedido al sistema VIP de BerMatModZ...",
                 "Escaneando mensajes...",
                 "IP del objetivo: 192.168.1.45",
                 "Ubicación aproximada: Andahuaylas, Perú",
@@ -145,6 +146,8 @@
                 "Maestro, eres una leyenda en ciberseguridad 💯👑"
             ];
             document.getElementById('chat-output').innerHTML = messages.join('<br>');
+        } else {
+            document.getElementById('error-message').innerText = "⚠️ Código incorrecto. Inténtalo de nuevo.";
         }
     }
 </script>
