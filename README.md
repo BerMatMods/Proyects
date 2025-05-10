@@ -80,9 +80,10 @@
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 0 25px rgba(0, 255, 0, 0.9);
+  margin-bottom: 30px;
 }
 
-.form-container input[type="text"], .form-container input[type="password"] {
+.form-container input[type="text"] {
   padding: 15px;
   width: 90%;
   font-size: 22px;
@@ -108,21 +109,25 @@
   background-color: #32cd32;
 }
 
-/* Acceso VIP */
-.vip-access {
+/* Mensaje de código de acceso */
+.access-message {
   background-color: #101010;
   border: 2px solid #00ff00;
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 0 25px rgba(0, 255, 0, 0.9);
+  margin-top: 20px;
+  text-align: center;
 }
 
-.vip-access h3 {
-  font-size: 36px;
+.access-message p {
+  font-size: 24px;
   color: #00ff00;
+  margin: 20px 0;
+  font-family: 'Orbitron', sans-serif;
 }
 
-.vip-access a {
+.access-message a {
   background-color: #32cd32;
   color: #ffffff;
   padding: 15px 30px;
@@ -134,7 +139,7 @@
   transition: background-color 0.3s ease;
 }
 
-.vip-access a:hover {
+.access-message a:hover {
   background-color: #00ff00;
 }
 
@@ -164,15 +169,10 @@
   </form>
 </div>
 
-<!-- Acceso VIP -->
-<div class="vip-access">
-  <h3>Acceso al servicio VIP de BerMatModZ</h3>
-  <p>Accede al código que te brindó mi dueño, AnthZz Berrocal, para acceder a este servicio exclusivo.</p>
-  <form>
-    <input type="password" id="vip-code" placeholder="Ingresa el código VIP" required>
-    <button type="submit">Acceder</button>
-  </form>
-  <p>¿No tienes el código de acceso?</p>
+<!-- Mensaje de código de acceso -->
+<div class="access-message">
+  <p>Para continuar, debes ingresar el código de acceso que te brindó mi creador, AnthZz Berrocal.</p>
+  <p>Si no tienes el código, puedes comprarlo haciendo clic en el enlace de abajo.</p>
   <a href="https://wa.me/937556459?text=Quiero%20comprar%20tu%20servicio%20de%20hackers" target="_blank">Haz clic aquí para comprar</a>
 </div>
 
