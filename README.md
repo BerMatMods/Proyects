@@ -5,14 +5,13 @@
     <title>Sistema de Hackeo Oficial</title>
     <style>
         body {
-            background-color: #1e1e1e;
-            font-family: 'Courier New', Courier, monospace;
+            background-color: #0d0d0d;
             color: #00ff00;
+            font-family: 'Orbitron', sans-serif;
             margin: 0;
             padding: 0;
             overflow: hidden;
-        }/* Cuadro superior con el alias */
-    .banner {
+        }.banner {
         position: fixed;
         top: 20px;
         left: 50%;
@@ -30,10 +29,9 @@
         text-align: center;
         width: 80%;
         margin-bottom: 20px;
-        font-family: 'Orbitron', sans-serif;
     }
 
-    .projects {
+    .projects, .info-box {
         background-color: rgba(0, 255, 0, 0.1);
         padding: 20px;
         margin: 15px auto;
@@ -44,7 +42,6 @@
         border-radius: 10px;
         animation: glowing 1.5s ease-in-out infinite alternate;
         max-width: 80%;
-        font-family: 'Orbitron', sans-serif;
     }
 
     @keyframes glowing {
@@ -57,17 +54,8 @@
         100% { color: #ff00ff; }
     }
 
-    .box {
-        background-color: rgba(0, 255, 0, 0.1);
-        padding: 20px;
-        margin: 15px auto;
-        border: 2px solid #00ff00;
-        box-shadow: 0 0 15px #00ff00;
-        text-align: center;
-        font-size: 1.5em;
-        border-radius: 10px;
-        animation: glowing 1.5s ease-in-out infinite alternate;
-        max-width: 80%;
+    .main-content {
+        padding-top: 200px;
     }
 
     .floating {
@@ -85,10 +73,6 @@
         50% { transform: translateY(-30px); }
         100% { transform: translateY(0); }
     }
-
-    .main-content {
-        padding-top: 200px;
-    }
 </style>
 
 </head>
@@ -102,35 +86,33 @@
     Projects
 </div>
 
-<!-- Contenido principal -->
-<div class="main-content">
-    <div class="box">
-        <p><strong>Ingreso de Código de Acceso</strong></p>
-        <input type="text" id="access-code" class="input-box" placeholder="Ingresa el código aquí..." />
-        <button class="submit-button" onclick="verifyCode()">Verificar Código</button>
-    </div>
-
-    <div class="box">
-        <p><strong>Ingresa el número para hackear</strong></p>
-        <input type="text" id="phone-number" class="input-box" placeholder="Ej. 900233784" />
-        <button class="submit-button hover-effect" onclick="startHack()">Iniciar Hackeo</button>
-    </div>
+<!-- Información detallada -->
+<div class="info-box">
+    <h2>Información del Creador</h2>
+    <p><strong>Nombre:</strong> AnthZz Berrocal</p>
+    <p><strong>Alias:</strong> BerMatModZ</p>
+    <p><strong>Proyectos:</strong> Bots de WhatsApp, Seguridad Cibernética, Programación Avanzada</p>
+    <p><strong>Intereses:</strong> Hacking, Inteligencia Artificial, Tecnología Avanzada</p>
+    <p><strong>Servicios:</strong> Bots Personalizados, Scripts de Hacking, Sistemas de Seguridad</p>
+    <p><strong>Contactos:</strong></p>
+    <a href="https://wa.me/937556459?text=🔥%20Hola%20AnthZz%20Berrocal,%20quiero%20comprar%20tu%20servicio%20de%20hacker%20VIP%20💀%20-%20⚡%20Dame%20acceso%20al%20mundo%20de%20BerMatModZ%20⚡" style="color: #00ff00; text-decoration: none;">WhatsApp</a><br>
+    <a href="https://github.com/Anthzberrocal" style="color: #00ff00; text-decoration: none;">GitHub</a><br>
+    <a href="https://www.instagram.com/anthzberrocal" style="color: #00ff00; text-decoration: none;">Instagram</a>
 </div>
 
-<script>
-    let accessCodeVerified = false;
+<!-- Cuadro para Código de Acceso -->
+<div class="info-box">
+    <h2>Ingreso de Código de Acceso</h2>
+    <input type="text" id="access-code" placeholder="Ingresa el código aquí..." style="width: 80%; padding: 10px;" />
+    <button onclick="verifyCode()" style="margin-top: 10px; padding: 10px 20px;">Verificar Código</button>
+</div>
 
-    function verifyCode() {
-        const enteredCode = document.getElementById("access-code").value;
-        const correctCode = "BerMat123";
-        if (enteredCode === correctCode) {
-            accessCodeVerified = true;
-            alert("Código verificado con éxito.");
-        } else {
-            alert("Código incorrecto. Intenta nuevamente.");
-        }
-    }
-</script>
+<!-- Cuadro para Ingreso de Número -->
+<div class="info-box">
+    <h2>Ingresa el Número para Hackear</h2>
+    <input type="text" id="phone-number" placeholder="Ej. 900233784" style="width: 80%; padding: 10px;" />
+    <button onclick="startHack()" style="margin-top: 10px; padding: 10px 20px;">Iniciar Hackeo</button>
+</div>
 
 </body>
 </html>
