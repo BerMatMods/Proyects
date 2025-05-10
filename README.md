@@ -41,6 +41,25 @@
             max-width: 800px;
             box-shadow: 0 0 15px #00FF00;
         }
+        .info {
+            font-size: 1.2em;
+            color: #00FF00;
+            margin-bottom: 20px;
+            background-color: #111;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #00FF00;
+            font-family: 'Press Start 2P', monospace;
+        }
+        .social-links img {
+            width: 40px;
+            margin: 10px;
+            transition: 0.3s;
+        }
+        .social-links img:hover {
+            transform: scale(1.2);
+            filter: drop-shadow(0 0 10px #00FF00);
+        }
         .input-field, .code-input {
             width: 80%;
             padding: 15px;
@@ -72,26 +91,23 @@
             color: #FFFFFF;
             box-shadow: 0 0 15px #FF0000;
         }
-        .toggle-password {
-            background-color: #111;
-            color: #00FF00;
-            border: none;
-            border-radius: 10px;
-            padding: 10px;
-            cursor: pointer;
-            margin-bottom: 20px;
-            font-family: 'Press Start 2P', monospace;
-            box-shadow: 0 0 10px #00FF00;
-        }
-        .toggle-password:hover {
-            color: #FF0000;
-        }
     </style>
 </head>
 <body>
     <div class="banner">⚡ BerMatModZ - Fuerza Anónima de Mentes Avanzadas ⚡</div><div class="container" id="phone-container">
-    <h2>Hackeando... Espere un momento...</h2>
-    <input type="text" placeholder="Ingrese número para investigar" class="input-field" id="phone-input">
+    <div class="info">
+        <p>Creado por: Anth'Zz Berrocal</p>
+        <p>Alias: BerMatModZ</p>
+        <p>Especialidad: Hacker Profesional y Desarrollador</p>
+        <p>Ubicación: Andahuaylas, Perú</p>
+    </div>
+    <div class="social-links">
+        <a href="https://wa.me/937556459" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a>
+        <a href="https://github.com/Anthzberrocal" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub"></a>
+        <a href="https://www.facebook.com/profile.php?id=100094458102825" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"></a>
+    </div>
+    <h2>Ingrese número para hackear</h2>
+    <input type="text" placeholder="Número a hackear o investigar" class="input-field" id="phone-input">
     <button class="hack-button" onclick="showAccessScreen()">Iniciar Hackeo</button>
 </div>
 
@@ -99,8 +115,7 @@
     <h2>⚠️ Acceso al Sistema VIP de BerMatModZ ⚠️</h2>
     <p>Creado por Anth'Zz Berrocal</p>
     <input type="password" placeholder="Ingrese código de acceso" class="code-input" id="access-code">
-    <button class="toggle-password" onclick="togglePassword()">Mostrar / Ocultar Código</button>
-    <button class="access-button" onclick="verifyCode()">Ingresar</button>
+    <button class="hack-button" onclick="verifyCode()">Ingresar</button>
     <p id="error-message" style="color:#FF0000;"></p>
 </div>
 
@@ -115,15 +130,6 @@
         if (phone) {
             document.getElementById('phone-container').style.display = 'none';
             document.getElementById('access-container').style.display = 'block';
-        }
-    }
-
-    function togglePassword() {
-        const input = document.getElementById('access-code');
-        if (input.type === 'password') {
-            input.type = 'text';
-        } else {
-            input.type = 'password';
         }
     }
 
@@ -142,8 +148,7 @@
                 "Chats recientes:",
                 "Bro, cuándo sale tu nuevo bot de IA? 🤖🔥",
                 "Hermano, tu BerMat-Bot MD está rompiendo el código en Termux! 💥😎",
-                "Anth'Zz, me ayudas con un script para hackear redes WiFi? 😏🔓",
-                "Maestro, eres una leyenda en ciberseguridad 💯👑"
+                "Anth'Zz, me ayudas con un script para hackear redes WiFi? 😏🔓"
             ];
             document.getElementById('chat-output').innerHTML = messages.join('<br>');
         } else {
