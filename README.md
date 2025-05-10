@@ -1,86 +1,101 @@
-#!/bin/bash
+<!DOCTYPE html><html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ BerMatModZ - Simulación de Hackeo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000000;
+            color: #00FF00;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+            margin: 0;
+        }
+        .banner {
+            font-size: 2.5em;
+            color: #00FF00;
+            text-shadow: 0 0 20px #00FF00;
+            margin-top: 20px;
+        }
+        .container {
+            margin: 30px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 0 15px #00FF00;
+        }
+        .info, .social, .chat {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 10px;
+            background: #111;
+            box-shadow: 0 0 10px #00FF00;
+        }
+        .chat p {
+            color: #00FF00;
+            text-align: left;
+            margin-bottom: 15px;
+            background: #111;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #00FF00;
+        }
+        a {
+            color: #00FF00;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #FF0000;
+        }
+        .typing {
+            display: inline-block;
+            border-right: 2px solid #00FF00;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 4s steps(40) infinite;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">⚡ BerMatModZ - Fuerza Anónima de Mentes Avanzadas ⚡</div><div class="container">
+    <div class="info">
+        <h2>Información Personal</h2>
+        <p>Nombre: Anth'Zz Berrocal</p>
+        <p>Alias: BerMatModZ - Hacker Profesional</p>
+        <p>Ubicación: Andahuaylas, Perú</p>
+        <p>Especialidades: Hacking ético, automatización, inteligencia artificial, tecnología</p>
+    </div>
 
-clear
+    <div class="social">
+        <h2>Redes Sociales</h2>
+        <p><a href="https://www.facebook.com/AnthZzBerrocal">Facebook 👤</a></p>
+        <p><a href="https://www.instagram.com/AnthZzBerrocal">Instagram 📸</a></p>
+        <p><a href="https://www.github.com/AnthZzBerrocal">GitHub 💻</a></p>
+        <p><a href="https://www.tiktok.com/@AnthZzBerrocal">TikTok 🎥</a></p>
+        <p><a href="https://wa.me/51937556459">WhatsApp 💬</a></p>
+    </div>
 
-Colores y efectos
+    <div class="chat">
+        <h2>Simulación de Hackeo</h2>
+        <p><span class="typing">Conectando a WhatsApp...</span></p>
+        <p>Número encontrado: +51 937556459</p>
+        <p>Escaneando conversaciones...</p>
+        <p>"Bro, cuándo sale tu nuevo bot de IA? 🤖🔥"</p>
+        <p>"Hermano, tu BerMat-Bot MD está rompiendo el código en Termux! 💥😎"</p>
+        <p>"Anth'Zz, me ayudas con un script para hackear redes WiFi? 😏🔓"</p>
+        <p>"Maestro, eres una leyenda en ciberseguridad 💯👑"</p>
+        <p>"Bro, cuándo hacemos la próxima reunión de hackers? 🤫💀"</p>
+        <p>"Hermano, BerMatModZ es lo mejor que he visto en ciberseguridad 🔥"</p>
+    </div>
+</div>
 
-green='\033[1;32m' red='\033[1;31m' blue='\033[1;34m' purple='\033[1;35m' yellow='\033[1;33m' cyan='\033[1;36m' reset='\033[0m' blink='\033[5m'
-
-Título inicial
-
-echo -e "${purple}⚡ BerMatModZ - Fuerza Anónima de Mentes Avanzadas ⚡${reset}" sleep 1
-
-Banner potente
-
-for i in {1..3}; do echo -e "${blue}█▀▀ █▀█ █▀█ █▀▀ █▀▀ ▀█▀ █ █▀█ █▀█ █▀█${reset}" echo -e "${purple}█▄█ █▄█ █▀▄ ██▄ █▄▄ ░█░ █ █▄█ █▄█ █▀▄${reset}" sleep 0.5 clear done
-
-Mensaje de bienvenida
-
-clear echo -e "${cyan}Bienvenido al sistema de ciberseguridad BerMatModZ Desplegando herramientas avanzadas...${reset}" sleep 2
-
-Datos personales detallados
-
-echo -e "${yellow}Analizando información del objetivo...${reset}" sleep 2
-
-echo -e "${green}Nombre: Anth'Zz Berrocal" sleep 0.5
-
-echo -e "Alias: BerMatModZ - Hacker Profesional" sleep 0.5
-
-echo -e "Ubicación: Andahuaylas, Perú" sleep 0.5
-
-echo -e "Edad: 18 años (Oculto para privacidad)" sleep 0.5
-
-echo -e "Físico: Atlético, músculos bien definidos, amante del gimnasio" sleep 0.5
-
-echo -e "Intereses: Ciberseguridad, programación, inteligencia artificial, tecnología" sleep 1
-
-Redes Sociales con logotipos
-
-echo -e "${red}Conectando a redes sociales...${reset}" sleep 2
-
-echo -e "${green}Facebook: https://www.facebook.com/AnthZzBerrocal 👤" sleep 0.5
-
-echo -e "Instagram: https://www.instagram.com/AnthZzBerrocal 📸" sleep 0.5
-
-echo -e "GitHub: https://www.github.com/AnthZzBerrocal 💻" sleep 0.5
-
-echo -e "TikTok: https://www.tiktok.com/@AnthZzBerrocal 🎥" sleep 0.5
-
-echo -e "WhatsApp: https://wa.me/51937556459 💬" sleep 1
-
-Escaneo de WhatsApp realista
-
-echo -e "${purple}Conectando a WhatsApp...${reset}" sleep 1
-
-echo -e "Número encontrado: +51 937556459" sleep 0.5
-
-echo -e "Iniciando escaneo de mensajes..." sleep 1
-
-echo -e "${yellow}Simulando acceso a conversaciones...${reset}" sleep 2
-
-Mensajes simulados detallados
-
-echo -e "${green}Mensaje 1: ¡Bro, cuándo sale tu nuevo bot de IA? 🤖🔥" sleep 0.8
-
-echo -e "Mensaje 2: Hermano, tu BerMat-Bot MD está rompiendo el código en Termux! 💥😎" sleep 0.8
-
-echo -e "Mensaje 3: Anth'Zz, me ayudas con un script para hackear redes WiFi? 😏🔓" sleep 0.8
-
-echo -e "Mensaje 4: Maestro, eres una leyenda en ciberseguridad 💯👑" sleep 1
-
-echo -e "Mensaje 5: Bro, cuándo hacemos la próxima reunión de hackers? 🤫💀" sleep 1
-
-echo -e "Mensaje 6: Hermano, BerMatModZ es lo mejor que he visto en ciberseguridad 🔥" sleep 1
-
-Fase final
-
-echo -e "${blue}Finalizando análisis...${reset}" sleep 1
-
-echo -e "${green}Acceso completo a las redes del objetivo." sleep 0.5
-
-echo -e "${red}Simulación completa. Gracias por usar BerMatModZ. 👽${reset}" sleep 1
-
-echo -e "${yellow}Repositorio de este script: https://github.com/AnthZzBerrocal/BerMatModZ-Simulacion-Hackeo${reset}" sleep 2
-
-exit
-
+</body>
+</html>
