@@ -21,6 +21,7 @@
             margin-top: 50px;
         }
 
+        /* Cuadro superior con el alias */
         .banner {
             position: fixed;
             top: 20px;
@@ -31,6 +32,13 @@
             font-weight: bold;
             text-transform: uppercase;
             animation: bannerGlow 3s infinite alternate;
+            padding: 15px;
+            background-color: rgba(0, 255, 0, 0.3);
+            border-radius: 10px;
+            border: 3px solid #00ff00;
+            box-shadow: 0 0 15px #00ff00;
+            text-align: center;
+            width: 80%;
         }
 
         @keyframes glowing {
@@ -132,9 +140,9 @@
 </head>
 <body>
 
-    <!-- Banner superior -->
+    <!-- Banner superior con el alias -->
     <div class="banner">
-        ⚡ **BerMatModZ** ⚡
+        *⚡BerMatModZ⚡*
     </div>
 
     <!-- Contenido principal -->
