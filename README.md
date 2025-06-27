@@ -1,118 +1,151 @@
 <!DOCTYPE html><html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Hackeo Oficial</title>
-    <style>
-        body {
-            background-color: #0d0d0d;
-            color: #00ff00;
-            font-family: 'Orbitron', sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }.banner {
-        position: fixed;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 3em;
-        color: #00ff00;
-        font-weight: bold;
-        text-transform: uppercase;
-        animation: bannerGlow 3s infinite alternate;
-        padding: 15px;
-        background-color: rgba(0, 255, 0, 0.3);
-        border-radius: 10px;
-        border: 3px solid #00ff00;
-        box-shadow: 0 0 15px #00ff00;
-        text-align: center;
-        width: 80%;
-        margin-bottom: 20px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎓 BerMatModZ - Tienda de Cursos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      font-family: 'Rajdhani', sans-serif;
     }
-
-    .projects, .info-box {
-        background-color: rgba(0, 255, 0, 0.1);
-        padding: 20px;
-        margin: 15px auto;
-        border: 2px solid #00ff00;
-        box-shadow: 0 0 15px #00ff00;
-        text-align: center;
-        font-size: 1.8em;
-        border-radius: 10px;
-        animation: glowing 1.5s ease-in-out infinite alternate;
-        max-width: 80%;
+    body {
+      background-color: #0d0d0d;
+      color: #e0e0e0;
+      padding: 20px;
     }
-
-    @keyframes glowing {
-        0% { text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00; }
-        100% { text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00; }
+    header {
+      text-align: center;
+      padding: 30px;
+      background: linear-gradient(135deg, #1f1f1f, #000000);
+      border-bottom: 3px solid #00ffcc;
+      font-family: 'Orbitron', sans-serif;
     }
-
-    @keyframes bannerGlow {
-        0% { color: #00ff00; }
-        100% { color: #ff00ff; }
+    header h1 {
+      color: #00ffcc;
+      font-size: 2.5em;
+      text-shadow: 0 0 5px #00ffcc;
     }
-
-    .main-content {
-        padding-top: 200px;
+    nav {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
     }
-
-    .floating {
-        position: absolute;
-        animation: float 5s ease-in-out infinite;
+    nav a {
+      color: #00ffff;
+      margin: 0 15px;
+      text-decoration: none;
+      transition: 0.3s;
     }
-
-    .floating:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; }
-    .floating:nth-child(2) { top: 30%; right: 5%; animation-delay: 1s; }
-    .floating:nth-child(3) { bottom: 10%; left: 25%; animation-delay: 2s; }
-    .floating:nth-child(4) { top: 50%; right: 15%; animation-delay: 3s; }
-
-    @keyframes float {
-        0% { transform: translateY(0); }
-        50% { transform: translateY(-30px); }
-        100% { transform: translateY(0); }
+    nav a:hover {
+      color: #ff00ff;
     }
-</style>
-
+    section {
+      margin: 30px 0;
+    }
+    h2 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+      color: #00ffff;
+    }
+    .card {
+      background: #1a1a1a;
+      border: 2px solid #00ffcc;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 10px 0;
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 15px #00ffcc88;
+    }
+    .whatsapp-btn {
+      display: block;
+      margin: 30px auto;
+      text-align: center;
+      background: #25D366;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 10px;
+      font-size: 1.2em;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .whatsapp-btn:hover {
+      background: #1ebe57;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #888;
+    }
+    .social-icons a {
+      margin: 0 10px;
+      color: #00ffff;
+      font-size: 1.5em;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+    .social-icons a:hover {
+      color: #ff00ff;
+    }
+  </style>
 </head>
-<body><!-- Cuadro superior con el alias -->
-<div class="banner">
-    ⚡ BerMatModZ ⚡
-</div>
-
-<!-- Cuadro para Projects -->
-<div class="projects">
-    Projects
-</div>
-
-<!-- Información detallada -->
-<div class="info-box">
-    <h2>Información del Creador</h2>
-    <p><strong>Nombre:</strong> AnthZz Berrocal</p>
-    <p><strong>Alias:</strong> BerMatModZ</p>
-    <p><strong>Proyectos:</strong> Bots de WhatsApp, Seguridad Cibernética, Programación Avanzada</p>
-    <p><strong>Intereses:</strong> Hacking, Inteligencia Artificial, Tecnología Avanzada</p>
-    <p><strong>Servicios:</strong> Bots Personalizados, Scripts de Hacking, Sistemas de Seguridad</p>
-    <p><strong>Contactos:</strong></p>
-    <a href="https://wa.me/937556459?text=🔥%20Hola%20AnthZz%20Berrocal,%20quiero%20comprar%20tu%20servicio%20de%20hacker%20VIP%20💀%20-%20⚡%20Dame%20acceso%20al%20mundo%20de%20BerMatModZ%20⚡" style="color: #00ff00; text-decoration: none;">WhatsApp</a><br>
-    <a href="https://github.com/Anthzberrocal" style="color: #00ff00; text-decoration: none;">GitHub</a><br>
-    <a href="https://www.instagram.com/anthzberrocal" style="color: #00ff00; text-decoration: none;">Instagram</a>
-</div>
-
-<!-- Cuadro para Código de Acceso -->
-<div class="info-box">
-    <h2>Ingreso de Código de Acceso</h2>
-    <input type="text" id="access-code" placeholder="Ingresa el código aquí..." style="width: 80%; padding: 10px;" />
-    <button onclick="verifyCode()" style="margin-top: 10px; padding: 10px 20px;">Verificar Código</button>
-</div>
-
-<!-- Cuadro para Ingreso de Número -->
-<div class="info-box">
-    <h2>Ingresa el Número para Hackear</h2>
-    <input type="text" id="phone-number" placeholder="Ej. 900233784" style="width: 80%; padding: 10px;" />
-    <button onclick="startHack()" style="margin-top: 10px; padding: 10px 20px;">Iniciar Hackeo</button>
-</div>
-
+<body>
+  <header>
+    <h1>⚡ BerMatModZ - Cursos y Tecnología 🔥</h1>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#cursos">Cursos</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>  <section id="inicio">
+    <h2>🎯 Bienvenido</h2>
+    <p>¡Hola! Soy <strong>Anth'Zz Berrocal</strong> (alias <strong>BerMatModZ</strong>), experto en bots, sistemas, hacking ético y desarrollo de IA. Aquí podrás aprender desde cero todo sobre tecnología moderna con estilo y seguridad.</p>
+  </section>  <section id="cursos">
+    <h2>📚 Cursos Disponibles</h2>
+    <div class="card"><h3>🔧 Termux desde Cero</h3><p>Automatización, comandos básicos, scripts útiles.</p><strong>S/ 20</strong></div>
+    <div class="card"><h3>🤖 Bots de WhatsApp con IA</h3><p>Creación de bots con IA personalizada y comandos.</p><strong>S/ 35</strong></div>
+    <div class="card"><h3>💻 Programación en AIDE</h3><p>Desarrolla apps Android sin PC, desde tu móvil.</p><strong>S/ 30</strong></div>
+    <div class="card"><h3>🛡️ Hacking Ético Básico</h3><p>Principios, herramientas y ética en ciberseguridad.</p><strong>S/ 25</strong></div>
+    <div class="card"><h3>🧠 Introducción a la IA</h3><p>Conceptos, tipos de IA y herramientas básicas.</p><strong>S/ 40</strong></div>
+    <div class="card"><h3>📟 Simulación Hacker en Termux</h3><p>Scripts visuales y de voz para presentaciones.</p><strong>S/ 15</strong></div>
+    <div class="card"><h3>🎨 HTML + CSS desde Cero</h3><p>Construye páginas web profesionales.</p><strong>S/ 25</strong></div>
+    <div class="card"><h3>🌐 Git y GitHub</h3><p>Control de versiones, ramas y GitHub Pages.</p><strong>S/ 20</strong></div>
+    <div class="card"><h3>📲 Clon de WhatsApp con IA</h3><p>Creación simulada de interfaz tipo WhatsApp.</p><strong>S/ 30</strong></div>
+    <div class="card"><h3>💾 Sistemas Operativos</h3><p>Arquitectura, tipos de SO, comandos Linux.</p><strong>S/ 35</strong></div>
+    <div class="card"><h3>📁 Automatización con Python</h3><p>Scripts que automatizan tareas en Android o PC.</p><strong>S/ 45</strong></div>
+    <div class="card"><h3>🔐 Criptografía Básica</h3><p>Cifrado, contraseñas, protección de datos.</p><strong>S/ 30</strong></div>
+    <div class="card"><h3>📡 Redes y Protocolos</h3><p>TCP/IP, ping, traceroute, redes WiFi seguras.</p><strong>S/ 25</strong></div>
+    <div class="card"><h3>📷 Ciberseguridad en Redes Sociales</h3><p>Protege tus cuentas y aprende a detectar riesgos.</p><strong>S/ 20</strong></div>
+    <div class="card"><h3>💡 Emprendimiento Tecnológico</h3><p>Cómo vender tus cursos y servicios online.</p><strong>S/ 15</strong></div>
+    <div class="card"><h3>📊 Base de Datos con SQL</h3><p>Consultas, creación de tablas y relaciones.</p><strong>S/ 35</strong></div>
+    <div class="card"><h3>🧬 Lógica de Programación</h3><p>Condicionales, bucles, estructuras básicas.</p><strong>S/ 20</strong></div>
+    <div class="card"><h3>🎮 Desarrollo de Juegos con JavaScript</h3><p>Juegos interactivos estilo web.</p><strong>S/ 40</strong></div>
+    <div class="card"><h3>📦 Desarrollo de APIs</h3><p>REST, JSON, consumo desde apps móviles.</p><strong>S/ 30</strong></div>
+    <div class="card"><h3>🔄 Automatización en WhatsApp</h3><p>Scripts que simulan chatbots inteligentes.</p><strong>S/ 35</strong></div>
+  </section>  <section id="proyectos">
+    <h2>🚀 Proyectos y Logros</h2>
+    <ul>
+      <li>⚡ BerMat-Bot MD – Bot multicomando para WhatsApp</li>
+      <li>💀 Simuladores hacker en Termux (con voz y efectos)</li>
+      <li>📱 App estilo WhatsApp con pantalla personalizada en AIDE</li>
+    </ul>
+  </section>  <section id="contacto">
+    <h2>📞 Contáctame</h2>
+    <p>¿Te interesa algún curso o proyecto? Escríbeme directo por WhatsApp:</p>
+    <a class="whatsapp-btn" href="https://wa.me/51937556459?text=Hola%20BerMatModZ,%20estoy%20interesado%20en%20tus%20cursos%20de%20sistemas%20y%20bots." target="_blank">Enviar mensaje por WhatsApp</a>
+  </section>  <footer>
+    <p>© 2025 BerMatModZ | Desarrollado con pasión en Andahuaylas, Perú 🇵🇪</p>
+    <div class="social-icons">
+      <a href="https://github.com/Anthzberrocal" target="_blank">🐙</a>
+      <a href="#">🎵</a>
+      <a href="#">📸</a>
+    </div>
+  </footer>
 </body>
 </html>
