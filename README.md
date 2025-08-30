@@ -85,6 +85,18 @@
       left: 0;
     }
 
+    /* Logo circular (ahora más grande) */
+    .menu-logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #e91e63;
+      box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
+      margin: 0 auto 1.2rem;
+      display: block;
+    }
+
     .menu h3 {
       font-family: 'Playfair Display', serif;
       color: #e91e63;
@@ -115,14 +127,14 @@
     .whatsapp-btn {
       display: block;
       margin: 1.8rem 0 0;
-      padding: 1rem 1.4rem;
+      padding: 1.1rem 1.4rem;
       background: linear-gradient(45deg, #25D366, #128C7E);
       color: white;
       text-align: center;
       border-radius: 14px;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
+      font-weight: 500;
+      font-size: 1.05rem;
       box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
       transition: all 0.3s;
     }
@@ -130,10 +142,6 @@
     .whatsapp-btn:hover {
       transform: scale(1.05);
       box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
-    }
-
-    .whatsapp-btn i {
-      margin-right: 8px;
     }
 
     /* Cerrar menú */
@@ -343,16 +351,18 @@
       margin-bottom: 1.8rem;
     }
 
+    /* CORRECCIÓN PRINCIPAL: Letras de la carta visibles */
     .letter {
-      font-family: 'Dancing Script', 'Poppins', cursive;
-      font-size: 1.35rem;
-      line-height: 1.55;
-      color: #e91e63;
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.6rem; /* Tamaño aumentado */
+      line-height: 1.8;
+      color: #d81b60; /* Rosa oscuro elegante (CORREGIDO) */
       text-align: left;
       white-space: pre-line;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.8px;
       margin: 0;
-      opacity: 0;
+      opacity: 1; /* Opacidad fija al 100% */
+      font-weight: 500;
     }
 
     footer {
@@ -368,8 +378,8 @@
       font-size: 20px;
       pointer-events: none;
       opacity: 0;
-      animation: floatUp 12s ease-in-out infinite, blink 2s ease-in-out infinite;
-      z-index: 0;
+      z-index: 1;
+      animation: floatUp 15s ease-in-out infinite, blink 3s ease-in-out infinite;
     }
 
     @keyframes floatUp {
@@ -377,7 +387,7 @@
         transform: translateY(100vh) rotate(0deg);
         opacity: 0;
       }
-      10% { opacity: 0.8; }
+      10% { opacity: 0.9; }
       90% { opacity: 0.9; }
       100% {
         transform: translateY(-20vh) rotate(360deg);
@@ -386,7 +396,7 @@
     }
 
     @keyframes blink {
-      0%, 100% { opacity: 0.7; }
+      0%, 100% { opacity: 0.6; }
       50% { opacity: 1; }
     }
 
@@ -409,8 +419,8 @@
       }
 
       .letter {
-        font-size: 1.25rem;
-        line-height: 1.5;
+        font-size: 1.4rem; /* Tamaño aumentado para móviles */
+        line-height: 1.75;
       }
 
       .btn-iniciar {
@@ -431,6 +441,8 @@
 
   <!-- Menú desplegable -->
   <div id="menu" class="menu">
+    <img src="https://i.postimg.cc/MThLTg2k/Screenshot-20250826-182522.jpg" alt="Logo de AnthZz Berrocal" class="menu-logo">
+
     <div class="close-menu" onclick="toggleMenu()">✕</div>
 
     <h3>✏️ Personaliza tu Carta</h3>
@@ -440,11 +452,10 @@
     <label>Nombre de tu Novia</label>
     <input type="text" id="nombreElla" value="Yorchi" oninput="actualizarNombres()">
 
-    <h3>ℹ️ Información del Proyecto</h3>
-    <p>Proyecto creado con amor por:</p>
-    <strong>AnthZz Berrocal</strong>
-    <small>Desarrollador | BerMatMods</small>
-    <br><br>
+    <h3>ℹ️ ¿Quieres más?</h3>
+    <p style="color: #555; font-size: 0.95rem; line-height: 1.5;">
+      Si quieres código, personalizar esta carta o desarrollar otros proyectos, contáctame a mi WhatsApp.
+    </p>
     <a href="https://wa.me/51937556459" target="_blank" class="whatsapp-btn">
       💬 Contactar por WhatsApp
     </a>
@@ -540,16 +551,16 @@
       menu.classList.toggle('open');
     }
 
-    // Actualizar nombres en la carta
+    // Actualizar nombres
     function actualizarNombres() {
       nombreYo = document.getElementById('nombreYo').value || 'AnthZz Berrocal';
       nombreElla = document.getElementById('nombreElla').value || 'Yorchi';
       if (document.getElementById('letter').textContent) {
-        typeWriter(); // Vuelve a escribir con los nuevos nombres
+        typeWriter();
       }
     }
 
-    // Mensaje de amor
+    // Mensaje con nombres
     function getMessage() {
       return `Mi amor ${nombreElla},
 
@@ -580,10 +591,12 @@ Con todo mi amor,
 ${nombreYo} 💖`;
     }
 
-    // Efecto de escritura
+    // Efecto de escritura (CORREGIDO)
     function typeWriter() {
       const letterElement = document.getElementById('letter');
       letterElement.textContent = '';
+      letterElement.style.opacity = 1; // Asegurar que siempre sea visible
+      
       let i = 0;
       const message = getMessage();
       const speed = 35;
@@ -593,12 +606,9 @@ ${nombreYo} 💖`;
           letterElement.textContent += message.charAt(i);
           i++;
           setTimeout(type, speed);
-        } else {
-          letterElement.style.opacity = 1;
         }
       }
 
-      letterElement.style.opacity = 0;
       setTimeout(type, 300);
     }
 
@@ -610,11 +620,14 @@ ${nombreYo} 💖`;
         heart.className = 'floating-heart';
         heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
         heart.style.left = Math.random() * 90 + 5 + 'vw';
-        heart.style.animationDuration = (Math.random() * 6 + 10) + 's';
+        heart.style.animationDuration = (Math.random() * 8 + 12) + 's';
+        heart.style.animationDelay = Math.random() * 5 + 's';
         document.body.appendChild(heart);
 
-        setTimeout(() => heart.remove(), 15000);
-      }, 2000);
+        setTimeout(() => {
+          heart.remove();
+        }, 18000);
+      }, 2500);
     }
   </script>
 </body>
