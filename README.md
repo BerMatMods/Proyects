@@ -571,7 +571,7 @@
   <!-- Pantalla de bloqueo -->
   <div id="lockScreen" class="lock-screen">
     <h2>🔐 Tu Carta de Amor</h2>
-    <p>Fecha especial: 10/11/23</p>
+    <p>👇INGRESA EL CÓDIGO DE ACCESO 👇</p>
 
     <div class="gif-frame">
       <img src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyZTAxbHV0Mm1rYmI2emc3ZmdvcGdka2szMGMzMHl4ZXlhcmEzN3A4cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Y62ofc4S1Vst2/giphy.gif" alt="Corazones flotando" width="200" height="200" />
