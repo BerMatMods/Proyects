@@ -154,6 +154,101 @@
       cursor: pointer;
     }
 
+    /* CUADRO DE ERROR PERSONALIZADO */
+    .error-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 200;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+
+    .error-modal.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .error-content {
+      background: white;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 400px;
+      padding: 1.8rem;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      border: 3px solid #ffb6c1;
+      animation: popIn 0.3s;
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .close-error {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 1.4rem;
+      color: #e91e63;
+      cursor: pointer;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background: #fff0f5;
+      transition: all 0.2s;
+    }
+
+    .close-error:hover {
+      background: #ffe6f0;
+      transform: rotate(90deg);
+    }
+
+    .error-content h3 {
+      color: #e91e63;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      text-align: center;
+    }
+
+    .error-content p {
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+    }
+
+    .error-whatsapp {
+      display: block;
+      width: 100%;
+      padding: 0.9rem;
+      background: linear-gradient(45deg, #25D366, #128C7E);
+      color: white;
+      text-align: center;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.05rem;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s;
+    }
+
+    .error-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(37, 211, 102, 0.5);
+    }
+
     /* Animación RGB suave */
     @keyframes rgbPulse {
       0% { box-shadow: 0 0 20px rgba(255, 105, 180, 0.5); }
@@ -351,17 +446,17 @@
       margin-bottom: 1.8rem;
     }
 
-    /* CORRECCIÓN PRINCIPAL: Letras de la carta visibles */
+    /* Letras de la carta: visibles */
     .letter {
       font-family: 'Dancing Script', cursive;
-      font-size: 1.6rem; /* Tamaño aumentado */
+      font-size: 1.6rem;
       line-height: 1.8;
-      color: #d81b60; /* Rosa oscuro elegante (CORREGIDO) */
+      color: #d81b60;
       text-align: left;
       white-space: pre-line;
       letter-spacing: 0.8px;
       margin: 0;
-      opacity: 1; /* Opacidad fija al 100% */
+      opacity: 1;
       font-weight: 500;
     }
 
@@ -419,7 +514,7 @@
       }
 
       .letter {
-        font-size: 1.4rem; /* Tamaño aumentado para móviles */
+        font-size: 1.4rem;
         line-height: 1.75;
       }
 
@@ -459,6 +554,18 @@
     <a href="https://wa.me/51937556459" target="_blank" class="whatsapp-btn">
       💬 Contactar por WhatsApp
     </a>
+  </div>
+
+  <!-- Cuadro de error personalizado -->
+  <div id="errorModal" class="error-modal">
+    <div class="error-content">
+      <div class="close-error" onclick="cerrarError()">×</div>
+      <h3>⚠️ Código Incorrecto</h3>
+      <p>El código que ingresaste es incorrecto. Comunícate con el creador para obtener el acceso correcto.</p>
+      <a href="https://wa.me/51937556459" target="_blank" class="error-whatsapp">
+        📱 Contactar por WhatsApp
+      </a>
+    </div>
   </div>
 
   <!-- Pantalla de bloqueo -->
@@ -540,9 +647,15 @@
         typeWriter();
         createHearts();
       } else {
-        alert('❌ Fecha incorrecta. Recuerda: 10/11/23');
+        // Mostrar cuadro de error personalizado
+        document.getElementById('errorModal').classList.add('active');
         clearInput();
       }
+    }
+
+    // Cerrar cuadro de error
+    function cerrarError() {
+      document.getElementById('errorModal').classList.remove('active');
     }
 
     // Abrir/cerrar menú
@@ -591,11 +704,11 @@ Con todo mi amor,
 ${nombreYo} 💖`;
     }
 
-    // Efecto de escritura (CORREGIDO)
+    // Efecto de escritura
     function typeWriter() {
       const letterElement = document.getElementById('letter');
       letterElement.textContent = '';
-      letterElement.style.opacity = 1; // Asegurar que siempre sea visible
+      letterElement.style.opacity = 1;
       
       let i = 0;
       const message = getMessage();
